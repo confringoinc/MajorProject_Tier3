@@ -1,0 +1,9 @@
+CONFIG = {
+	'EPISODES' : 1,
+	'BATCH_SIZE': 128,
+	'TB_LOG': 'LOG',
+	'SAVE_DATA': 50,
+	'SAVE_BEST_MODEL': False,
+	'TRAIN_ACT': 4,
+	'UPDATE_NET': 1000
+}
