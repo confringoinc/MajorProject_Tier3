@@ -125,8 +125,14 @@ def main():
 		frame_cnt = 0
 
 		if (e+1) % CONFIG['SAVE_DATA'] == 0:
-			agent.save()
+			saveThread = threading.Thread(target=saveAllData, args=(agent,))
+			# agent.save()
 
+
+def saveAllData(agent):
+	print("\n<====| Saving data |====>")
+	agent.save()
+	print("\n<====| Data Saved |====>")
 
 if __name__ == "__main__":
 
