@@ -80,6 +80,7 @@ def main():
 	frame_number = 0
 
 	for e in range(CONFIG['EPISODES']):
+
 		obs = env.reset()
 
 		episodic_reward = 0
@@ -105,9 +106,6 @@ def main():
 
 			obs = np.copy(new_obs)
 
-			if frame_number > 100: break
-			else: print("Frame_number:- ", frame_number)
-
 		score_list.append(episodic_reward)
 		avg_reward = np.mean(score_list[-100:])
 
@@ -126,6 +124,7 @@ def main():
 
 		if (e+1) % CONFIG['SAVE_DATA'] == 0:
 			saveThread = threading.Thread(target=saveAllData, args=(agent,))
+			saveThread.start()
 			# agent.save()
 
 
@@ -133,7 +132,7 @@ def saveAllData(agent):
 	print("\n<====| Saving data |====>\n")
 	
 	agent.save()
-	
+
 	print("\n<====| Data Saved |====>\n")
 
 if __name__ == "__main__":
