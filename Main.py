@@ -130,9 +130,11 @@ def main():
 
 
 def saveAllData(agent):
-	print("\n<====| Saving data |====>")
+	print("\n<====| Saving data |====>\n")
+	
 	agent.save()
-	print("\n<====| Data Saved |====>")
+	
+	print("\n<====| Data Saved |====>\n")
 
 if __name__ == "__main__":
 
