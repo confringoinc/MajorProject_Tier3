@@ -191,7 +191,9 @@ public class CommandServer : MonoBehaviour
 		}
 		
 		car_traffic.CarList.Clear();
+		car_traffic.setStagedForInactive();
 		_carController.Start();
+		car_traffic.Start();
 	}
 
 	void freeze(){
@@ -254,7 +256,7 @@ public class CommandServer : MonoBehaviour
 
 		Rtotal = Rsa + Rtb;
 		
-		Debug.LogError("Rtb: Rtb1-> " + Rtb1 + " Eq1-> " + Eq1 + " | Rsa: Rsa1-> " + Rsa1 + " Eq2-> " + Eq2 + " | Total Reward: " + Rtotal);
+		//Debug.LogError("Rtb: Rtb1-> " + Rtb1 + " Eq1-> " + Eq1 + " | Rsa: Rsa1-> " + Rsa1 + " Eq2-> " + Eq2 + " | Total Reward: " + Rtotal);
 		return Rtotal;
 	}
 	

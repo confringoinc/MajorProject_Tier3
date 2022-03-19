@@ -27,7 +27,7 @@ namespace UnityStandardAssets.Vehicles.Car
 	public List<CarAIControl> CarList = new List<CarAIControl>();
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
 
 		inactive_cars = new Queue<GameObject>();
 		inactive_carsR = new Queue<GameObject>();
@@ -87,7 +87,6 @@ namespace UnityStandardAssets.Vehicles.Car
 					CarList.Remove(carAI);
 					carAI.removeCar();
 					// Destroy(carAI.gameObject);
-
 				}
 			} 
 
@@ -109,6 +108,18 @@ namespace UnityStandardAssets.Vehicles.Car
 		}
 		
 	}
+
+	public void setStagedForInactive(){
+		if(inactive_cars.Count > 0){
+			for(int i = 0; i < inactive_cars.Count; i++){
+				GameObject inactive_car = inactive_cars.Dequeue();
+
+				CarAIControl carAI = (CarAIControl) inactive_car.GetComponent(typeof(CarAIControl));
+				carAI.unSetStage();
+			}
+		}
+	}
+
 	// public void UpdateReverse(){
 	// 	Debug.Log("In Update Reverse");
 	// 	//add any inactive car to inactive car list

@@ -487,6 +487,10 @@ namespace UnityStandardAssets.Vehicles.Car
 			staged = true;
 		}
 
+		public void unSetStage(){
+			staged = false;
+		}
+
 		//	if car is staged then remove it from road for now.
 		public void removeCar(){
 			m_CarController.transform.position = initial_position;

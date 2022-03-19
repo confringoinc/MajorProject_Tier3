@@ -136,7 +136,6 @@ public class UISystem : MonoSingleton<UISystem> {
 		if (outside_lane) 
 		{
 			// isDone = true;
-			Debug.LogError("Lane Changed!");
 			Lane_Text.color = Color.red;
 			Lane_Text.text = "Outside of Lane!";
 			check_incidents = true;
